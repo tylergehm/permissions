@@ -38,3 +38,52 @@ For additional information on how these virtual machines were set up, visit [Con
 - Step 6 - Observe file access as a normal user and user in security group
 
 <h2>- Step 1 - Log in to DC and Client VMs</h2>
+Note:
+This project uses a Domain Controller virtual machine and a client virtual machine that were previously set up on the project: </p>
+[Configuring Active Directory within Azure VMs](https://github.com/tylergehm/configure-ad) </p>
+
+The project will begin logged in to both the Domain Controller virtual machine and the Client-1 virtual machine. </p>
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e273c8dc-083c-47ea-b014-7add153d73e6" />
+
+In the Domain Controller VM, use the file explorer to open the C:\ drive. In this drive there will be four folders to create: "Read-Access", "Write-Access", "No-Access", and "Accounting". </p>
+
+<img width="1400" height="738" alt="image" src="https://github.com/user-attachments/assets/25c8b666-5cb5-4244-91ce-9d3a20d60d43" /> </p>
+
+The four new folders have been created and named appropriately. </p>
+
+<img width="1389" height="731" alt="image" src="https://github.com/user-attachments/assets/10217f40-744e-46b8-b457-186696460540" />
+
+Each of the folders will be set with properties according to their name. The "Read-Access" folder will be given the permission to Read-Only. To set this up, right-click on the folder and click on "Properties". </p>
+
+<img width="480" height="590" alt="image" src="https://github.com/user-attachments/assets/5140e9fb-1dc0-4bb5-a559-60003f868f96" /> </p>
+
+Once inside the folder Properties, click on the tab "Sharing" then click the button that says "Share..." </p>
+
+<img width="700" height="587" alt="image" src="https://github.com/user-attachments/assets/aed3221d-b1af-41e3-90b0-dc71cbedb4d9" /> </p>
+
+In the text box, type "Domain Users" and click "Add" to give folder permission to all domain users. </p>
+
+<img width="696" height="590" alt="image" src="https://github.com/user-attachments/assets/66d47ba7-86f4-439f-b0c0-e44659ce2f00" /> </p>
+
+Verify that the Permission Level is set to "Read", then click Apply. This gives users access to the folder, but can only view the contents inside and cannot alter them in any way. </p>
+
+<img width="708" height="593" alt="image" src="https://github.com/user-attachments/assets/d197d6ec-cd6e-4eb9-9647-9dd865eb162a" /> </p>
+
+This next screen verifies that the folder gives Read-Only permission. Click "Done". </p>
+
+<img width="706" height="580" alt="image" src="https://github.com/user-attachments/assets/2702d89e-f811-4aeb-9702-cf7705033d98" /> </p>
+
+This process is repeated for the "Write-Only" folder. Notice that the Permission Level is Read/Write. This gives users access to view the contents of the folder and to edit the files contained within. </p>
+
+<img width="702" height="589" alt="image" src="https://github.com/user-attachments/assets/23d113e2-1b20-4585-83b5-408d10628c50" />
+
+For the "No-Access" folder, the Read/Write permissions are granted to Domain Admins. This means if a standard domain user tries to access the folder then they will be denied access. </p>
+
+
+
+
+
+
+
+
