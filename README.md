@@ -44,6 +44,8 @@ This project uses a Domain Controller virtual machine and a client virtual machi
 
 The project will begin logged in to both the Domain Controller virtual machine and the Client-1 virtual machine. </p>
 
+<h2>Step 2 - Create folders on C:\ drive of Domain Controller</h2>
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e273c8dc-083c-47ea-b014-7add153d73e6" />
 
 In the Domain Controller VM, use the file explorer to open the C:\ drive. In this drive there will be four folders to create: "Read-Access", "Write-Access", "No-Access", and "Accounting". </p>
@@ -79,6 +81,44 @@ This process is repeated for the "Write-Only" folder. Notice that the Permission
 <img width="702" height="589" alt="image" src="https://github.com/user-attachments/assets/23d113e2-1b20-4585-83b5-408d10628c50" />
 
 For the "No-Access" folder, the Read/Write permissions are granted to Domain Admins. This means if a standard domain user tries to access the folder then they will be denied access. </p>
+
+<h2>Step 3 - Set Permissions</h2>
+
+<img width="1913" height="1074" alt="image" src="https://github.com/user-attachments/assets/7312b5cc-1db3-4715-a960-dbb8049b7fff" /> </p>
+
+Next, the Client-1 VM will be logged into as a normal domain user. Open the file explorer and type in the address bar "\\dc-1". This will give access to the folders that have been shared by the Domain Controller VM on the network. </p>
+
+<img width="1408" height="742" alt="image" src="https://github.com/user-attachments/assets/0199b600-4147-4a5c-83e7-09b310a10061" /> </p>
+
+The file explorer is now viewing the shared folders in the "\\dc-1" network file sharing. Next, the user will attempt to open the folders. </p>
+
+<img width="1408" height="742" alt="image" src="https://github.com/user-attachments/assets/a1fe0dfb-4c49-408d-95f6-18acda6013a6" /> </p>
+
+The standard domain user was able to access the "Read-Only" folder because all Domain Users were granted permission. </p>
+
+<img width="1400" height="734" alt="image" src="https://github.com/user-attachments/assets/9ba5e901-9662-4984-aae8-fc2e47a6426c" /> </p>
+
+When attempting to create a file in the "Read-Only" folder, permission was denied because Domain Users have access to only view files. </p>
+
+<img width="1408" height="742" alt="image" src="https://github.com/user-attachments/assets/c67b82b0-2735-413a-badd-36a80bffd781" /> </p>
+
+The standard domain user was able to access the "Write-Only" folder because all Domain Users were granted permission to read and write files. </p>
+
+<img width="1391" height="735" alt="image" src="https://github.com/user-attachments/assets/6aca6731-5bb4-4954-a52d-e48a78559be1" /> </p>
+
+A text document was successfully created inside the folder because all Domain Users have access to view and create/edit files within the shared folder. </p>
+
+
+<img width="1406" height="741" alt="image" src="https://github.com/user-attachments/assets/f332ff21-1945-4c68-87e7-49d6e6fc4b86" /> </p>
+
+When attempting to open the "No-Access" folder, the standard user was denied because this folder has permissions set for only Domain Admins to have access. </p>
+
+
+
+
+
+
+
 
 
 
