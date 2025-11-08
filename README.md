@@ -114,6 +114,76 @@ A text document was successfully created inside the folder because all Domain Us
 When attempting to open the "No-Access" folder, the standard user was denied because this folder has permissions set for only Domain Admins to have access. </p>
 
 
+<h2>Step 5 - Create a Security Group</h2>
+
+<img width="1917" height="1057" alt="image" src="https://github.com/user-attachments/assets/07f111a6-8d9d-4ca2-92a4-d78c6306c834" /> </p>
+
+Returning to the Domain Controller VM, open up the "Active Directory Users and Computers" application. Right-click on mydomain.com domain and go down to New > Organizational Unit. </p>
+
+<img width="546" height="507" alt="image" src="https://github.com/user-attachments/assets/cf21f6a1-8d89-4999-80da-d1158be976d4" /> </p>
+
+An OU will be created called "GROUPS". </p>
+
+<img width="1053" height="853" alt="image" src="https://github.com/user-attachments/assets/0e4fabe1-5306-440b-a880-497f654d3c58" /> </p>
+
+Right-click on the "GROUPS" folder and go to New > Groups </p>
+
+<img width="546" height="507" alt="image" src="https://github.com/user-attachments/assets/f1da8862-5268-431c-a3ba-e7b1290543cb" /> </p>
+
+Create a new security group called "ACCOUNTANTS". </p>
+
+<img width="1920" height="1078" alt="image" src="https://github.com/user-attachments/assets/571f810c-9ffe-4645-b3d1-e7f288696a10" /> </p>
+
+Returning back to the C:\ drive in file explorer, right-click on the "Accounting" folder and go to properties. Then click on "Sharing" and in the textbox, add ACCOUNTANTS. Then give the ACCOUNTANTS security group Read/Write permissions. </p>
+
+<h2>Step 6 - Observe file access as a normal user and user in security groups</h2>
+
+<img width="1914" height="1078" alt="image" src="https://github.com/user-attachments/assets/6d882cce-8205-4241-885b-b3b89b163fde" /> </p>
+
+When a domain user attempts to open the "ACCOUNTING" folder, permission is denied because it is set up for only users in the ACCOUNTING security group. </p>
+
+<img width="1920" height="1058" alt="image" src="https://github.com/user-attachments/assets/f75eca3c-67bc-4fcc-8aa4-02b87ef7e608" /> </p>
+
+To add a user to the ACCOUNTANTS security group, find the user in the "Active Directory Users and Computers" application. Right-click on the user's account and click "Add to a group..." </p>
+
+<img width="571" height="314" alt="image" src="https://github.com/user-attachments/assets/cc69aea2-63fb-45b3-9a9f-f42ea57bd942" /> </p>
+
+Enter "ACCOUNTANTS" into the text field and click on "Check Names" then click "OK". </p>
+
+<img width="482" height="214" alt="image" src="https://github.com/user-attachments/assets/84dcd85d-3ecc-4d09-8dfb-265a7dc1831a" /> </p>
+
+The user has successfully been placed into the ACCOUNTANTS security group. </p>
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b7f74642-b936-4c96-be35-6c552d517757" /> </p>
+
+Back on the Client VM, the authorized user will now attempt to access the ACCOUNTING folder. </p>
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/0c494410-1723-4878-ba1c-5297f6563395" /> </p>
+
+User can successfully access the ACCOUNTING folder. </p>
+
+<img width="1408" height="742" alt="image" src="https://github.com/user-attachments/assets/eee14c70-764e-4389-bc91-160c24370d70" /> </p>
+
+User was able to successfully add a file to the ACCOUNTING folder. </p>
+
+<h2>Conclusion</h2>
+
+This Azure Active Directory lab effectively demonstrates role-based access control (RBAC) in action by configuring shared folders with granular permissions managed through security groups, enabling precise control over file access in a domain environment. By assigning Domain Users read-only or read/write access, restricting sensitive folders to Domain Admins, and dynamically granting full control to members of the ACCOUNTANTS group, the project showcases how Active Directory centralizes and simplifies permission management at scale. The hands-on testing from a client VM—verifying access denial, successful entry upon group membership, and file creation—reinforces the power of group-based permissions in reducing administrative overhead while enhancing security, making it an essential practice for enterprise file sharing and identity governance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
