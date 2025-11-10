@@ -27,6 +27,9 @@ This Azure Active Directory project explores role-based access control by creati
 
 For additional information on how these virtual machines were set up, visit [Configuring Active Directory within Azure VMs](https://github.com/tylergehm/configure-ad)
 
+<h2>Video Demonstration</h2>
+
+- ### [YouTube: Active Directory File Shares: Mastering Permissions with Security Groups](https://www.youtube.com/watch?v=eatRGJzw1X4)
 
 <h2>Project Steps</h2>
 
